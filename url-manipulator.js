@@ -10,28 +10,27 @@ const form = document.querySelector(".form");
 // form to action
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  // if checking validation of form is false, report and return
+
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
   }
-  // create url string from data input that entering from user
-  const urlString =
-    protocol.value +
-    "//" +
-    hostname.value +
-    ":" +
-    port.value +
-    pathname.value +
-    searchQuery.value +
-    hash.value;
+
+  // create standard URL from inputs
+  let urlString =
+    protocol.value + "//" + hostname.value;
+
+  if (port.value) urlString += ":" + port.value;
+  if (pathname.value) urlString += pathname.value.startsWith("/") ? pathname.value : "/" + pathname.value;
+  if (searchQuery.value) urlString += searchQuery.value.startsWith("?") ? searchQuery.value : "?" + searchQuery.value;
+  if (hash.value) urlString += hash.value.startsWith("#") ? hash.value : "#" + hash.value;
+
   const button = e.submitter;
-  // check what action to perform is navigate, replace or reload
   if (button.value === "navigate") {
     location.assign(urlString);
   } else if (button.value === "replace") {
     location.replace(urlString);
   } else {
-    location.reload(urlString);
+    location.reload();
   }
 });
