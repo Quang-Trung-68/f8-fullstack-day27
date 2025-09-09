@@ -1,0 +1,31 @@
+<!-- Bài 1: Location API Demo
+1.1. Location Properties Inspector
+File: location-inspector.html
+Yêu cầu:
+1. Tạo giao diện hiển thị tất cả thuộc tính của window.location trong một bảng hoặc danh sách
+với format rõ ràng. Cụ thể hiển thị các thuộc tính sau:
+href - URL đầy đủ hiện tại
+protocol - Giao thức đang sử dụng (http: hoặc https:)
+hostname - Tên miền (ví dụ: google.com)
+port - Số cổng (ví dụ: 3000, 8080, hoặc rỗng nếu là cổng mặc định)
+pathname - Đường dẫn sau tên miền (ví dụ: /products/detail)
+search - Phần query string bao gồm dấu ? (ví dụ: ?id=123&name=abc)
+hash - Phần fragment identifier bao gồm dấu # (ví dụ: #section1)
+origin - Origin của URL (protocol + hostname + port)
+2. Mỗi thuộc tính hiển thị theo format:
+Property Name: location.href
+Current Value: https://example.com:3000/products?id=123#details -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1: Location API Demo-Location Properties Inspector</title>
+  </head>
+  <body>
+    <h1>1.1 Location Properties Inspector</h1>
+    <div id="root"></div>
+    <script src="./location-inspector.js"></script>
+  </body>
+</html>

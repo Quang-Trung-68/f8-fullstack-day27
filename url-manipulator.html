@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Manipulation Tool</title>
+  </head>
+  <body>
+    <form class="formv">
+      <div class="input-group">
+        <label>Protocol</label>
+        <select id="protocol">
+          <option value="http:">http:</option>
+          <option value="https:">https:</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="hostname">Hostname</label>
+        <input required type="text" id="hostname" />
+      </div>
+      <div class="input-group">
+        <label for="port">Port</label>
+        <input type="text" id="port" />
+      </div>
+      <div class="input-group">
+        <label for="pathname">Pathname</label>
+        <input type="text" id="pathname" />
+      </div>
+      <div class="input-group">
+        <label for="search-query">Search/query</label>
+        <input type="text" id="search-query" />
+      </div>
+      <div class="input-group">
+        <label for="hash">Hash</label>
+        <input type="text" id="hash" />
+      </div>
+      <button type="submit" value="navigate" class="navigate">Navigate</button>
+      <button type="submit" value="replace" class="replace">Replace</button>
+      <button type="submit" value="reload" class="reload">Reload</button>
+    </form>
+    <div class="url-result"></div>
+    <script src="./url-manipulator.js"></script>
+  </body>
+</html>

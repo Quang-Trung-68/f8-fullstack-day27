@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clipboard Manager</title>
+  </head>
+  <body>
+    <div class="copy-text" style="border: 1px solid">
+      <p>Textarea to Copy</p>
+      <textarea name="text-copy" id="text-copy"></textarea>
+      <div><button type="button" class="copy">Copy</button></div>
+    </div>
+    <div class="copy-text" style="border: 1px solid">
+      <p>Textarea to Paste</p>
+      <div><button type="button" class="paste">Paste</button></div>
+      <textarea name="text-copy" id="text-paste"></textarea>
+    </div>
+
+    <script src="./clipboard-manager.js"></script>
+  </body>
+</html>
