@@ -1,5 +1,4 @@
-console.log(window.location);
-
+// list properties
 const array = [
   "href",
   "protocol",
@@ -13,6 +12,7 @@ const array = [
 
 const root = document.querySelector("#root");
 
+// html to render
 const html = array.map((element) => {
   return `<div style="border: 2px solid; padding: 5px">
       <h3>Property Name: location.${element}</h3>
@@ -21,5 +21,3 @@ const html = array.map((element) => {
 }).join("");
 
 root.innerHTML = html;
-
-console.log(html);
