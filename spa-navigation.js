@@ -26,7 +26,13 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     const page = btn.dataset.page;
-    history.pushState({ page }, "", `?page=${page}`);
+    const params = new URLSearchParams(location.search);
+    const pageCurrent = params.get("page") || "home";
+    // if pageCurrent is different with page, changing to page. if not, not change
+    if (pageCurrent !== page) history.pushState({ page }, "", `?page=${page}`);
+    else {
+      return;
+    }
     render(page);
   });
 });
