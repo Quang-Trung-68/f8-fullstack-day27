@@ -4,17 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.1. Clipboard Manager</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        color: #333;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #2c3e50;
+      }
+
+      .copy-text {
+        width: 100%;
+        max-width: 500px;
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .copy-text p {
+        margin: 0 0 10px;
+        font-weight: bold;
+        color: #34495e;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 100px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        outline: none;
+        font-size: 14px;
+      }
+
+      textarea:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+      }
+
+      .btn-wrap {
+        margin: 10px 0;
+        text-align: right;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #2980b9;
+      }
+
+      button:active {
+        transform: scale(0.96);
+      }
+
+      .paste {
+        background: #27ae60;
+      }
+
+      .paste:hover {
+        background: #1e8449;
+      }
+    </style>
   </head>
   <body>
-    <div class="copy-text" style="border: 1px solid">
+    <h1>Clipboard Manager</h1>
+
+    <div class="copy-text">
       <p>Textarea to Copy</p>
       <textarea name="text-copy" id="text-copy"></textarea>
-      <div><button type="button" class="copy">Copy</button></div>
+      <div class="btn-wrap">
+        <button type="button" class="copy">Copy</button>
+      </div>
     </div>
-    <div class="copy-text" style="border: 1px solid">
+
+    <div class="copy-text">
       <p>Textarea to Paste</p>
-      <div><button type="button" class="paste">Paste</button></div>
-      <textarea name="text-copy" id="text-paste"></textarea>
+      <textarea name="text-paste" id="text-paste"></textarea>
+      <div class="btn-wrap">
+        <button type="button" class="paste">Paste</button>
+      </div>
     </div>
 
     <script src="./clipboard-manager.js"></script>

@@ -4,11 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.2. URL Manipulation Tool</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        color: #333;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #2c3e50;
+      }
+
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid #ddd;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 6px;
+        color: #34495e;
+      }
+
+      input, select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      input:focus, select:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      button {
+        flex: 1;
+        padding: 10px 14px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .preview {
+        background: #3498db;
+      }
+      .preview:hover {
+        background: #2980b9;
+      }
+
+      .navigate {
+        background: #3498db;
+      }
+      .navigate:hover {
+        background: #2980b9;
+      }
+
+      .replace {
+        background: #e67e22;
+      }
+      .replace:hover {
+        background: #ca6f1e;
+      }
+
+      .reload {
+        background: #27ae60;
+      }
+      .reload:hover {
+        background: #1e8449;
+      }
+
+      .url-result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #ecf0f1;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 100%;
+        word-wrap: break-word;
+        font-family: monospace;
+      }
+    </style>
   </head>
   <body>
+    <h1>URL Manipulation Tool</h1>
     <form class="form">
       <div class="input-group">
-        <label>Protocol</label>
+        <label for="protocol">Protocol</label>
         <select id="protocol">
           <option value="http:">http:</option>
           <option value="https:">https:</option>
@@ -20,25 +127,31 @@
       </div>
       <div class="input-group">
         <label for="port">Port</label>
-        <input type="text" id="port" />
+        <input type="text" id="port" placeholder="Optional"/>
       </div>
       <div class="input-group">
         <label for="pathname">Pathname</label>
-        <input type="text" id="pathname" />
+        <input type="text" id="pathname" placeholder="/example/path"/>
       </div>
       <div class="input-group">
         <label for="search-query">Search/query</label>
-        <input type="text" id="search-query" />
+        <input type="text" id="search-query" placeholder="?id=123"/>
       </div>
       <div class="input-group">
         <label for="hash">Hash</label>
-        <input type="text" id="hash" />
+        <input type="text" id="hash" placeholder="#section"/>
       </div>
-      <button type="submit" value="navigate" class="navigate">Navigate</button>
-      <button type="submit" value="replace" class="replace">Replace</button>
-      <button type="submit" value="reload" class="reload">Reload</button>
+
+      <div class="buttons">
+        <button type="submit" value="preview" class="preview">Preview</button>
+        <button type="submit" value="navigate" class="navigate">Navigate</button>
+        <button type="submit" value="replace" class="replace">Replace</button>
+        <button type="submit" value="reload" class="reload">Reload</button>
+      </div>
     </form>
-    <div class="url-result"></div>
+
+    <div class="url-result">URL preview will appear here...</div>
+
     <script src="./url-manipulator.js"></script>
   </body>
 </html>

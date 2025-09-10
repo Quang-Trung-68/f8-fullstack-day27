@@ -4,6 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.1. Single Page Navigation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        width: 100%;
+        background: #2c3e50;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav button {
+        background: transparent;
+        border: none;
+        color: #ecf0f1;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      nav button:hover {
+        background: #34495e;
+      }
+
+      nav button.active {
+        background: #3498db;
+        color: white;
+      }
+
+      #content {
+        margin-top: 40px;
+        padding: 20px;
+        max-width: 800px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        min-height: 200px;
+      }
+
+      #historyInfo {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #555;
+        font-style: italic;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -12,7 +74,7 @@
       <button data-page="services">Services</button>
       <button data-page="contact">Contact</button>
     </nav>
-    <div id="content"></div>
+    <div id="content">Welcome to Home Page!</div>
     <p id="historyInfo"></p>
     <script src="./spa-navigation.js"></script>
   </body>

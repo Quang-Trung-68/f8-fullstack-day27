@@ -1,27 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3.2. Camera Capture App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3.2. Camera Capture App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    video, canvas, img {
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    video {
+      max-width: 100%;
+      width: 500px;
+    }
+
+    #canvas {
+      display: block;
+      max-width: 100%;
+      width: 500px;
+    }
+
+    .preview {
+      text-align: center;
+    }
+
+    .download {
+      background: #27ae60;
+    }
+
+    .download:hover {
+      background: #1e8449;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <button type="button" class="start-camera">Start Camera</button>
-        <button type="button" class="stop-camera">Stop Camera</button>
-        <button type="button" class="capture-camera">Capture Camera</button>
-    </div>
-    <div>
-        <video width="500px" autoplay height="auto" class="video" src="" style="border: 1px solid;"></video>
-    </div>
-    <div>
-        <canvas id="canvas"></canvas>
-    </div>
-    <div>
-        <p>Image</p>
-        <img src="" alt="Image preview">
-    </div>
-    <button type="button" class="download">Download Photo</button>
-    <script src="./camera-capture.js"></script>
+  <h1>Camera Capture App</h1>
+  
+  <div class="controls">
+    <button type="button" class="start-camera">Start Camera</button>
+    <button type="button" class="stop-camera">Stop Camera</button>
+    <button type="button" class="capture-camera">Capture</button>
+  </div>
+  
+  <video autoplay class="video"></video>
+  <canvas id="canvas"></canvas>
+
+  <div class="preview">
+    <p><strong>Image Preview</strong></p>
+    <img src="" alt="Image preview" width="300px">
+  </div>
+
+  <button type="button" class="download">Download Photo</button>
+
+  <script src="./camera-capture.js"></script>
 </body>
 </html>
